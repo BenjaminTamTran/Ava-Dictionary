@@ -1,0 +1,566 @@
+<!doctype html>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+<script type="text/javascript">
+(function() {
+  var root = this;
+  var _ = function(obj) {
+    if (obj instanceof _) return obj;
+    if (!(this instanceof _)) return new _(obj);
+    this._wrapped = obj;
+  };
+
+  if (typeof exports !== 'undefined') {
+    if (typeof module !== 'undefined' && module.exports) {
+      exports = module.exports = _;
+    }
+    exports._ = _;
+  } else {
+    root._ = _;
+  }
+
+  _.search = function(params, iterator, context){
+    bridge.send(params, function(responseData) {
+      iterator.call(context, responseData);
+    })
+  };
+
+  _.bookmark = function(params, iterator, context){
+    bridge.send(params, function(responseData) {
+      iterator.call(context, responseData);
+    })
+  };
+
+  _.getBookmarks = function(params, iterator, context){
+    bridge.send(params, function(responseData) {
+      iterator.call(context, responseData);
+    })
+  };
+
+  _.getHistory = function(params, iterator, context){
+    bridge.send(params, function(responseData) {
+      iterator.call(context, responseData);
+    })
+  };
+
+  _.getFunctionType = function(params, iterator, context){
+    bridge.send(params, function(responseData) {
+      iterator.call(context, responseData);
+    })
+  };
+
+  _.downloadZipFile = function(params, iterator, context){
+    bridge.send(params, function(responseData) {
+      iterator.call(context, responseData);
+    })
+  };
+
+  _.shareSMS = function(params, iterator, context){
+    bridge.send(params, function(responseData) {
+      iterator.call(context, responseData);
+    })
+  };
+
+  _.shareEmail = function(params, iterator, context){
+    bridge.send(params, function(responseData) {
+      iterator.call(context, responseData);
+    })
+  };
+
+  _.saveCSS = function(params, iterator, context){
+    bridge.send(params, function(responseData) {
+      iterator.call(context, responseData);
+    })
+  };
+
+  _.getCSS = function(params, iterator, context){
+    bridge.send(params, function(responseData) {
+      iterator.call(context, responseData);
+    })
+  };
+}).call(this);
+
+</script>
+<style type='text/css'>
+html { font-family:Helvetica; color:#222; }
+h2 { color:steelblue; font-size:22px; margin-top:0px; margin-bottom: 0px; text-align: center;}
+button { margin:0 3px 10px; font-size:14px; width: 100px;}
+.logLine { border-bottom:1px solid #ccc; padding:4px 2px; font-family:courier; font-size:11px; }
+#search_content, #bookmarks_content{
+  overflow: scroll;
+  height: 300px;
+  display: none;
+  overflow-y: scroll;
+}
+
+#search_content{
+  margin-top: -20px;
+}
+
+#bookmarks_content{
+  height: 350px!important;
+  margin-top: -30px;
+  font-size: 14px;
+}
+
+#bookmarks_content a{
+  font-size: 14px;
+}
+
+
+#search{
+  background-color: green;
+  color: white;
+  height: 30px;
+  display: none;
+  float: left;
+  margin-right: 30px;
+}
+#keyword{
+  margin-top: 0px;
+  height: 25px;
+  margin-bottom: 0px;
+  font-size: 1em;
+  display: none;
+}
+#bookmarks{
+  background-color: red;
+  color: white;
+  height: 30px;
+  display: none;
+}
+#loading {
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  position: fixed;
+  display: none;
+  opacity: 0.7;
+  background-color: rgb(92, 91, 91);
+  z-index: 99;
+  text-align: center;
+  color: white;
+  font-size: 2em;
+  padding-top: 50%;
+}
+</style>
+<script>
+var type = "anh_viet";
+var url_zip_file = 'http://192.168.1.101:5000/dictionary/data.zip'
+window.onerror = function(err) {
+}
+window.onload = function(){
+    
+}
+document.addEventListener('WebViewJavascriptBridgeReady', onBridgeReady, false)
+function onBridgeReady(event) {
+  bridge = event.bridge
+  var uniqueId = 1
+  bridge.init(function(message, responseCallback) {
+    
+  })
+
+  bridge.registerHandler('testJavascriptHandler', function(data, responseCallback) {
+    var responseData = { 'Javascript Says':'Right back atcha!' }
+    responseCallback(responseData)
+  })
+
+  var button = document.getElementById('search')
+  button.ontouchstart = function(e) {
+    e.preventDefault()
+    var keyword = document.getElementById("keyword").value;
+    keyword = trimString(keyword)
+    if (keyword.length > 0) {
+        document.activeElement.blur()
+        document.getElementById("keyword").blur()
+    }
+  }
+
+  var button = document.getElementById('bookmarks')
+  button.ontouchstart = function(e) {
+    e.preventDefault()
+    var keyword = document.getElementById("keyword").value;
+    keyword = trimString(keyword)
+    if (keyword.length > 0) {
+      var data = '{"api": "save_bookmarks", "keyword" : "' + keyword + '-' + type + '"}';
+      _.bookmark(data, function(responceData){
+      });
+    }
+  }
+  var data = '{"api": "function_type"}';
+  _.getFunctionType(data, function(responceData){
+    option_change(responceData)
+  });
+}
+
+function keywordUpCheck(e) {
+  var code = e?e.which:event.keyCode;
+  if (code == 13) {
+    var keyword = document.getElementById("keyword").value;
+    keyword = trimString(keyword)
+    if (keyword.length > 0) {
+        document.activeElement.blur()
+        document.getElementById("keyword").blur()
+    }
+  }
+}
+
+function trimString(str) {
+    return str.replace(/^\s+|\s+$/g, "");
+};
+
+function onBlurKeyWord(){
+    var keyword = document.getElementById("keyword").value;
+    keyword = trimString(keyword)
+    if(keyword.length < 1){
+        return;
+    }
+    searchWithKeyWordAndType(keyword,type);
+}
+
+function searchWithKeyWordAndType(keyword){
+  if (type != "anh_viet") {
+    document.getElementById('loading').style.display = 'block'
+  }
+  var data = '{"api": "database", "dbname": "' + type + '", "keyword" : "' + keyword + '"}';
+  document.getElementById('search_content').innerHTML = ""
+  _.search(data, function(responceData){
+    document.getElementById('loading').style.display = 'none'
+    document.getElementById('search_content').innerHTML = responceData;
+    var a_array = document.getElementsByTagName("a")
+    for(var i = 0; i < a_array.length; i ++){
+      var a_element = a_array[i];
+      a_element.onclick = function(){
+        keepSearching(this);
+      };
+    }
+    var data2 = '{"api": "get_css"}';
+    _.getCSS(data2, function(responceCSS){
+      var arrcss = responceCSS.split(";")
+      document.getElementById('search_content').style.backgroundColor = arrcss[0];
+      document.getElementById('search_content').style.fontFamily = arrcss[1];
+      document.getElementById('search_content').style.fontSize = arrcss[2];
+    });
+  });
+}
+
+function keepSearching(obj){
+  document.getElementById("keyword").value = obj.innerText;
+  searchWithKeyWordAndType(obj.innerText);
+}
+
+function searchFromHistory(obj,typeLishsu){
+  document.getElementById("keyword").style.display = 'block'
+  document.getElementById("search").style.display = 'block'
+  document.getElementById("bookmarks").style.display = 'block'
+  document.getElementById("search_content").style.display = 'block'
+  document.getElementById("bookmarks_content").style.display = 'none'
+  document.getElementById("keyword").value = obj.innerText;
+  if (typeLishsu == 0) {
+    type = "anh_viet";
+    document.getElementById("title_of_type").innerText = "Tra từ Anh - Việt";
+    searchWithKeyWordAndType(obj.innerText,"anh_viet");
+  }else{
+    type = "viet_anh";
+    document.getElementById("title_of_type").innerText = "Tra từ Việt - Anh";
+    searchWithKeyWordAndType(obj.innerText,"viet_anh");
+  }
+}
+
+function option_change(typeChange){
+  type = typeChange;
+  if (type == "history" || type == "bookmarks") {
+    var lishsuArr;
+    if (type == "history") {
+      document.getElementById("title_of_type").innerText = "Những từ đã tra"
+      var data = '{"api": "history"}';
+    }else{
+      document.getElementById("title_of_type").innerText = "Những từ được bookmarks"
+      var data = '{"api": "bookmarks"}';
+    }
+    _.getHistory(data, function(responceData){
+      lishsuArr = responceData.split(";")
+      var html = "";
+      var historyE;
+      for(var i = 0; i < lishsuArr.length; i ++){
+        historyE = lishsuArr[i].split("-");
+        if (historyE[1] == "anh_viet") {
+          html += "" + (i + 1) + ". <a href='#' onclick='searchFromHistory(this,0)'>" + historyE[0] + "</a><br/>";
+        }else{
+          html += "" + (i + 1) + ". <a href='#' onclick='searchFromHistory(this,1)'>" + historyE[0] + "</a><br/>";
+        }
+      }
+      document.getElementById("bookmarks_content").innerHTML = html
+      document.getElementById("bookmarks_content").style.display = 'block'
+    });
+    return;
+  }
+  if (type == "anh_viet") {
+    document.getElementById("keyword").style.display = 'block'
+    document.getElementById("search").style.display = 'block'
+    document.getElementById("bookmarks").style.display = 'block'
+    document.getElementById("search_content").style.display = 'block'
+    document.getElementById("bookmarks_content").style.display = 'none'
+    document.getElementById("title_of_type").innerText = "Tra từ Anh - Việt";
+  }
+  if (type == "viet_anh") {
+    document.getElementById("keyword").style.display = 'block'
+    document.getElementById("search").style.display = 'block'
+    document.getElementById("bookmarks").style.display = 'block'
+    document.getElementById("search_content").style.display = 'block'
+    document.getElementById("bookmarks_content").style.display = 'none'
+    document.getElementById("title_of_type").innerText = "Tra từ Việt - Anh";
+  }
+  if (type == "introduction") {
+    document.getElementById("title_of_type").innerText = "Giới thiệu ứng dụng cho bạn bè";
+    var html = "";
+    html += '<font style="color: #337DEB">Bạn nghĩ là sẽ có ai đó trong số những người bạn biết thích ứng dụng AVA Dict này.</font>';
+    html += '<br/>';
+    html += '<font style="color: #337DEB">Hãy chia sẻ app này với họ, qua SMS hoặc Email</font>';
+    html += '<br/>';
+    html += '<ul>';
+    html += '<li><a style="color: #337DEB" href="#" onclick="shareViaSMS()">Chia sẻ qua tin nhắn</a></li>';
+    html += '<li><a style="color: #337DEB" href="#" onclick="shareViaEmail()">Chia sẻ qua Email</a></li>';
+    html += '</ul>';
+    document.getElementById("bookmarks_content").innerHTML = html
+    document.getElementById("bookmarks_content").style.display = 'block'
+    return;
+  }
+  if (type == "setting") {
+    document.getElementById("title_of_type").innerText = "Cấu hình ứng dụng";
+    var html = "";
+    html += '<div id="setting_font" onclick="toggleFont()">Chỉnh sửa Font</div>'
+    html += '  <div id="setting_font_details">'
+    html += '    <div id="font_1" style="margin-left: 20px; margin-top: 10px; font-family: Helvetica"><input  onclick="changeFontFamily(this)" type="radio" name="font_number" value="Helvetica">Helvetica</div>'
+    html += '    <div id="font_2" style="margin-left: 20px; margin-top: 10px; font-family: Arial"><input onclick="changeFontFamily(this)" type="radio" name="font_number" value="Arial">Arial</div>'
+    html += '    <div id="font_3" style="margin-left: 20px; margin-top: 10px; font-family: Times New Roman"><input onclick="changeFontFamily(this)" type="radio" name="font_number" value="Times New Roman">Times New Roman</div>'
+    html += '    <div id="font_4" style="margin-left: 20px; margin-top: 10px; font-family: Georgia"><input onclick="changeFontFamily(this)" type="radio" name="font_number" value="Georgia">Georgia</div>'
+    html += '    <div id="font_5" style="margin-left: 20px; margin-top: 10px; font-family: Marker Felt"><input onclick="changeFontFamily(this)" type="radio" name="font_number" value="Marker Felt">Marker Felt</div>'
+    html += '    <div id="font_6" style="margin-left: 20px; margin-top: 10px; font-family: Verdana"><input onclick="changeFontFamily(this)" type="radio" name="font_number" value="Verdana">Verdana</div>'
+    html += '    <div id="font_size" style="margin-left: 10px; margin-top: 10px; margin-bottom: 10px;">Font size: '
+    html += '      <select id="font_size_option" onchange="changeFontSize(this)">'
+    html += '        <option value="14px">14px</option>'
+    html += '        <option value="16px">16px</option>'
+    html += '        <option value="18px">18px</option>'
+    html += '        <option value="20px">20px</option>'
+    html += '        <option value="22px">22px</option>'
+    html += '      </select>'
+    html += '    </div>'
+    html += '  </div>'
+    html += '  <div id="setting_skin" onclick="toggleSkin()">Chỉnh sửa Skin</div>'
+    html += '  <div id="setting_skin_details">'
+    html += '    <br/>'
+    html += '    <div id="skin_1" style="margin-left: 20px;clear: both"><input style="float: left" type="radio" onclick="changeSkin(this)" name="skine_number" value="#FF8080">'
+    html += '      <div style="width: 100px; height: 20px; background-color: #FF8080; float: left;"></div>'
+    html += '    </div>'
+    html += '    <br/>'
+    html += '    <div id="skin_2" style="margin-left: 20px;clear: both"><input style="float: left" type="radio" onclick="changeSkin(this)" name="skine_number" value="#7575FF">'
+    html += '      <div style="width: 100px; height: 20px; background-color: #7575FF; float: left;"></div>'
+    html += '    </div>'
+    html += '    <br/>'
+    html += '    <div id="skin_3" style="margin-left: 20px;clear: both"><input style="float: left" type="radio" onclick="changeSkin(this)" name="skine_number" value="#33FFD6">'
+    html += '      <div style="width: 100px; height: 20px; background-color: #33FFD6; float: left;"></div>'
+    html += '    </div>'
+    html += '    <br/>'
+    html += '    <div id="skin_4" style="margin-left: 20px;clear: both"><input style="float: left" type="radio" onclick="changeSkin(this)" name="skine_number" value="#75FF75">'
+    html += '      <div style="width: 100px; height: 20px; background-color: #75FF75; float: left;"></div>'
+    html += '    </div>'
+    html += '    <br/>'
+    html += '    <div id="skin_5" style="margin-left: 20px;clear: both"><input style="float: left" type="radio" onclick="changeSkin(this)" name="skine_number" value="#FFD175">'
+    html += '      <div style="width: 100px; height: 20px; background-color: #FFD175; float: left;"></div>'
+    html += '    </div>'
+    html += '    <br/>'
+    html += '    <div id="skin_6" style="margin-left: 20px;clear: both"><input style="float: left" type="radio" onclick="changeSkin(this)" name="skine_number" value="#FF4D4D">'
+    html += '      <div style="width: 100px; height: 20px; background-color: #FF4D4D; float: left;"></div>'
+    html += '    </div>'
+    html += '    <br/>'
+    html += '    <div id="skin_6" style="margin-left: 20px;clear: both"><input style="float: left" type="radio" onclick="changeSkin(this)" name="skine_number" value="#FFFFFF">'
+    html += '      <div style="width: 100px; height: 20px; background-color: #FFFFFF; float: left;"></div>'
+    html += '    </div>'
+    html += '    </div>'
+    document.getElementById("bookmarks_content").innerHTML = html
+    document.getElementById("bookmarks_content").style.display = 'block'
+    getCSSAndApply()
+    return;
+  }
+  if (type == "debug_info") {
+      document.getElementById("title_of_type").innerText = "Show debug Infomation";
+      var html = "";
+      html += '<li><a style="color: #337DEB" href="#" onclick="infomation_app()">Show Infomation Application</a></li>';
+      html += '<li><a style="color: #337DEB" href="#" onclick="gps_show()">Toa Do GPG</a></li>';
+      html += '</ul>';
+      document.getElementById("bookmarks_content").innerHTML = html
+      document.getElementById("bookmarks_content").style.display = 'block'
+      return;
+  }
+  if (type == "translation") {
+    document.getElementById("title_of_type").innerText = "Đọc web bằng Mana Dictionary";
+    return;
+  }
+}
+var content_share = " hi, mình thấy có 1 app từ điển rất hay ở đây nè https://itunes.apple.com/vn/artist/tran-huu-tam/id537631722 App này có các tính năng rất hay như "
+content_share += " là: dịch từ Anh-Việt, Việt-Anh, lưu lại những từ yêu thích. Download về xài thử nhé!"
+function shareViaSMS(){
+  var data = '{"api": "share_sms", "content" : "' + content_share + '"}';
+  _.shareSMS(data, function(responceData){
+  });
+}
+
+function shareViaEmail(){
+  var data = '{"api": "share_email", "subject": "Ứng dụng  AVA Dict", "body" : "' + content_share + '"}';
+  _.shareEmail(data, function(responceData){
+  });
+}
+
+function infomation_app(){
+        var data = '{"api": "infomation"}';
+        _.shareSMS(data, function(responceData){
+                   });
+    }
+    
+function gps_show(){
+        var data = '{"api": "gps"}';
+        _.shareEmail(data, function(responceData){
+                     });
+    }
+    
+function toggleFont(){
+  if (document.getElementById("setting_font_details").style.display == 'none' || document.getElementById("setting_font_details").style.display == '') {
+    document.getElementById("setting_font_details").style.display = 'block'
+    document.getElementById("setting_skin_details").style.display = 'none'
+  }else{
+    document.getElementById("setting_font_details").style.display = 'none'
+  }
+}
+
+function changeFontSize(obj){
+  var e = obj[obj.selectedIndex];
+  fontSize = e.value;
+  document.getElementById("font_1").style.cssText += "font-size: " + e.value
+  document.getElementById("font_2").style.cssText += "font-size: " + e.value
+  document.getElementById("font_3").style.cssText += "font-size: " + e.value
+  document.getElementById("font_4").style.cssText += "font-size: " + e.value
+  document.getElementById("font_5").style.cssText += "font-size: " + e.value
+  document.getElementById("font_6").style.cssText += "font-size: " + e.value
+  saveCSSToNative()
+}
+
+function toggleSkin(){
+  if (document.getElementById("setting_skin_details").style.display == 'none' || document.getElementById("setting_skin_details").style.display == '') {
+    document.getElementById("setting_skin_details").style.display = 'block'
+    document.getElementById("setting_font_details").style.display = 'none'
+  }else{
+    document.getElementById("setting_skin_details").style.display = 'none'
+  }
+}
+
+var skineValue = "#FFFFFF"
+var fontSize = "16px"
+var fontFamily = "Times New Roman"
+
+function changeSkin(obj){
+  document.body.style.cssText += "background-color: " + obj.value
+  skineValue = obj.value;
+  saveCSSToNative()
+}
+
+function changeFontFamily(obj){
+  fontFamily =  obj.value
+  saveCSSToNative()
+}
+
+function saveCSSToNative(){
+  var data = '{"api": "set_css", "content": "' + skineValue + ';' + fontFamily + ';' + fontSize + '"}';
+  _.saveCSS(data, function(responceData){});
+}
+
+function getCSSAndApply(){
+  var data = '{"api": "get_css"}';
+  _.getCSS(data, function(responceCSS){
+    var arrcss = responceCSS.split(";")
+    skineValue = arrcss[0];
+    //Skin
+    document.body.style.cssText += "background-color: " + arrcss[0]
+    var skin_arr = document.getElementsByName("skine_number")
+    for(var i = 0; i < skin_arr.length; i ++){
+      var skin_e = skin_arr[i];
+      if (skin_e.value == arrcss[0]) {
+        skin_e.checked = "true"
+        break;
+      }
+    }
+    //Font Family
+    fontFamily = arrcss[1];
+    var fontFamily_arr = document.getElementsByName("font_number")
+    for(var i = 0; i < fontFamily_arr.length; i ++){
+      var font_e = fontFamily_arr[i];
+      if (font_e.value == arrcss[1]) {
+        font_e.checked = "true"
+        break;
+      }
+    }
+    //Font size
+    fontSize = arrcss[2];
+    document.getElementById("font_1").style.cssText += "font-size: " + arrcss[2]
+    document.getElementById("font_2").style.cssText += "font-size: " + arrcss[2]
+    document.getElementById("font_3").style.cssText += "font-size: " + arrcss[2]
+    document.getElementById("font_4").style.cssText += "font-size: " + arrcss[2]
+    document.getElementById("font_5").style.cssText += "font-size: " + arrcss[2]
+    document.getElementById("font_6").style.cssText += "font-size: " + arrcss[2]
+    var font_s = document.getElementById("font_size_option");
+    for (var i = 0; i < font_s.options.length; i++) 
+    {
+      if (font_s.options[i].text === arrcss[2]) 
+        {
+          font_s.selectedIndex = i;
+          break;
+        }
+    }
+  });
+}
+
+</script>
+<style type='text/css'>
+#setting_font{
+  height: 30px;
+  width: 300px;
+  background-color: #6699FF;
+  color: white;
+  text-align: center;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding-top: 10px;
+}
+#setting_skin{
+  height: 30px;
+  width: 300px;
+  background-color: #6699FF;
+  color: white;
+  border-top: 1px white solid;
+  text-align: center;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding-top: 10px;
+}
+#setting_font_details, #setting_skin_details{
+  display: none;
+}
+</style>
+</head>
+<body>
+<h2 id="title_of_type">Tra từ Anh - Việt</h2>
+<input type="text" size="30" id="keyword" value="" onkeyup="keywordUpCheck()" onblur="onBlurKeyWord();" onfocus="this.value = '';">
+<br>
+<button id="search">Tra từ</button>
+<button id="bookmarks">Bookmarks</button>
+<br>
+<div id='search_content'></div>
+<div id='bookmarks_content'></div>
+<br>
+<div id="loading">
+  Đang kiếm từ
+</div>
+</body></html>

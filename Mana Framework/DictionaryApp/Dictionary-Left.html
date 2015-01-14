@@ -1,0 +1,73 @@
+<!doctype html>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+<style type='text/css'>
+td{
+  height: 35px;
+  font-size: 1.2em;
+  color: #008A2E;
+}
+</style>
+<script type="text/javascript">
+window.onerror = function(err) {
+}
+window.onload = function(){
+  document.ontouchmove = function(e){ 
+    e.preventDefault(); 
+  }
+}
+document.addEventListener('WebViewJavascriptBridgeReady', onBridgeReady, false)
+function onBridgeReady(event) {
+  bridge = event.bridge
+  var uniqueId = 1
+  bridge.init(function(message, responseCallback) {
+  })
+
+  bridge.registerHandler('testJavascriptHandler', function(data, responseCallback) {
+    var responseData = { 'Javascript Says':'Right back atcha!' }
+    responseCallback(responseData)
+  })
+}
+
+function setFunction(func){
+  data = '{"dict_api_type" : "save_function_and_move_to_center", "function_name" : "' + func + '"}';
+  _.selectFunction(data, function(responceData){
+    
+  });
+}
+(function() {
+  var root = this;
+  var _ = function(obj) {
+    if (obj instanceof _) return obj;
+    if (!(this instanceof _)) return new _(obj);
+    this._wrapped = obj;
+  };
+
+  if (typeof exports !== 'undefined') {
+    if (typeof module !== 'undefined' && module.exports) {
+      exports = module.exports = _;
+    }
+    exports._ = _;
+  } else {
+    root._ = _;
+  }
+
+  _.selectFunction = function(params, iterator, context){
+    bridge.send(params, function(responseData) {
+      iterator.call(context, responseData);
+    })
+  };
+}).call(this);
+</script>
+</head><body>
+<table width="100%" bgcolor="#f5f5f5"><tbody><tr onclick="setFunction('anh_viet');"><td valign="middle"><div class="title">Anh - Việt</div></td></tr></tbody></table>
+<table width="100%" bgcolor="#ffffff"><tbody><tr onclick="setFunction('viet_anh');"><td valign="middle"><div class="title">Việt - Anh</div></td></tr></tbody></table>
+<table width="100%" bgcolor="#f5f5f5"><tbody><tr onclick="setFunction('history');"><td valign="middle"><div class="title">Những từ đã tra</div></td></tr></tbody></table>
+<table width="100%" bgcolor="#ffffff"><tbody><tr onclick="setFunction('bookmarks');"><td valign="middle"><div class="title">Những từ yêu thích</div></td></tr></tbody></table>
+<table width="100%" bgcolor="#f5f5f5"><tbody><tr onclick="setFunction('introduction');"><td valign="middle"><div class="title">Giới thiệu ứng dụng</div></td></tr></tbody></table>
+<table width="100%" bgcolor="#ffffff"><tbody><tr onclick="setFunction('setting');"><td valign="middle"><div class="title">Cài đặt</div></td></tr></tbody></table>
+<!--<table width="100%" bgcolor="#f5f5f5"><tbody><tr onclick="setFunction('debug_info');"><td valign="middle"><div class="title">Show debug info</div></td></tr></tbody></table>-->
+<!--<table width="100%" bgcolor="#ffffff"><tbody><tr onclick="setFunction('translation');"><td valign="middle"><div class="title">Dịch từ trên trang Web</div></td></tr></tbody></table>-->
+</body></html>
