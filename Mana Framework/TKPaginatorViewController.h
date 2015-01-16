@@ -8,9 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "TKPaginatorView.h"
-#import "GAI.h"
 
-@interface TKPaginatorViewController : GAITrackedViewController  <TKPaginatorViewDataSource, TKPaginatorViewDelegate>
+@interface TKPaginatorViewController : UIViewController  <TKPaginatorViewDataSource, TKPaginatorViewDelegate>
 
 @property (nonatomic, strong, readonly) TKPaginatorView *paginatorView;
 

@@ -8,10 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "MNLeftViewController.h"
-#import "GAI.h"
 #import "MNGetFocusScreen.h"
 
-@interface MNRightViewController : GAITrackedViewController <UIWebViewDelegate>
+@interface MNRightViewController : UIViewController <UIWebViewDelegate>
 
 @property (nonatomic,retain) UIWebView *webview;
 @property (nonatomic,retain) NSString *urlString;

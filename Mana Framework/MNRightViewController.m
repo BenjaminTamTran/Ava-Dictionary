@@ -24,7 +24,6 @@
     if (self) {
         // Custom initialization
         self.title = @"Extend";
-        self.trackedViewName = @"Right Page";
     }
     return self;
 }

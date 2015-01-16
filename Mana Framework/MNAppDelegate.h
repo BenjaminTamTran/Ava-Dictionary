@@ -16,7 +16,6 @@
 #import <CommonCrypto/CommonDigest.h>
 #import <AVFoundation/AVFoundation.h>
 #import "TKFunctionGPS.h"
-#import "MNGoogleAnalytics.h"
 @class MNViewController;
 
 @interface MNAppDelegate : UIResponder <UIApplicationDelegate>

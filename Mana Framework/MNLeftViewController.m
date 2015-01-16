@@ -394,8 +394,8 @@
         //FRAMEWORK: Google Analytics
         if ([[dicJson objectForKey:@"api"] isEqualToString:@"setGoogleAnalytics"])
         {
-            MNGoogleAnalytics *analytic = [[MNGoogleAnalytics alloc]init];
-            json_data = [analytic googleAnalyticsInitializingWithTrackUncaughtExceptions:YES andDispatchInterval:5 andDebug:YES andTrackingID:[[dicJson objectForKey:@"params"] objectForKey:@"id"]];
+//            MNGoogleAnalytics *analytic = [[MNGoogleAnalytics alloc]init];
+//            json_data = [analytic googleAnalyticsInitializingWithTrackUncaughtExceptions:YES andDispatchInterval:5 andDebug:YES andTrackingID:[[dicJson objectForKey:@"params"] objectForKey:@"id"]];
         }
         //END FRAMEWORK
         

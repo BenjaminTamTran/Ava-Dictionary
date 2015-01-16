@@ -3,8 +3,8 @@ This is an offline English-Vietnamese-English dictionary for Vietnamese all over
 
 Layout by HTML/Javascript with CSS
 
-Business Layer: Objective-C and SQLite
+Technical: Objective-C and SQLite
 
-Can not run on iPhone 6/6s still fixing
+Support all iPhone devices: iPhone 4/4s, 5/5S. 6/6+
 
 

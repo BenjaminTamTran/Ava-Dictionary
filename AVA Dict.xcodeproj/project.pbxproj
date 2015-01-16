@@ -112,9 +112,6 @@
 		F36240E816E06B8B00A8AE38 /* MNVibrate.m in Sources */ = {isa = PBXBuildFile; fileRef = F36240E516E06B8B00A8AE38 /* MNVibrate.m */; };
 		F36240EA16E06BD200A8AE38 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F36240E916E06BD200A8AE38 /* AudioToolbox.framework */; };
 		F36240EC16E06C0A00A8AE38 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F36240EB16E06C0A00A8AE38 /* MessageUI.framework */; };
-		F36240FC16E0B78A00A8AE38 /* libGoogleAnalytics_debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F36240F216E0B78900A8AE38 /* libGoogleAnalytics_debug.a */; };
-		F36240FD16E0B78A00A8AE38 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F36240F316E0B78900A8AE38 /* libGoogleAnalytics.a */; };
-		F36240FE16E0B78A00A8AE38 /* MNGoogleAnalytics.m in Sources */ = {isa = PBXBuildFile; fileRef = F36240F516E0B78900A8AE38 /* MNGoogleAnalytics.m */; };
 		F36240FF16E0B78A00A8AE38 /* MNSetFocusScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = F36240F716E0B78A00A8AE38 /* MNSetFocusScreen.m */; };
 		F362410016E0B78A00A8AE38 /* MNSplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = F36240F916E0B78A00A8AE38 /* MNSplashScreen.m */; };
 		F362410116E0B78A00A8AE38 /* MNSplashScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F36240FA16E0B78A00A8AE38 /* MNSplashScreen.xib */; };
@@ -353,15 +350,6 @@
 		F36240E516E06B8B00A8AE38 /* MNVibrate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNVibrate.m; sourceTree = "<group>"; };
 		F36240E916E06BD200A8AE38 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		F36240EB16E06C0A00A8AE38 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
-		F36240ED16E0B78800A8AE38 /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
-		F36240EE16E0B78900A8AE38 /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
-		F36240EF16E0B78900A8AE38 /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
-		F36240F016E0B78900A8AE38 /* GAITransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITransaction.h; sourceTree = "<group>"; };
-		F36240F116E0B78900A8AE38 /* GAITransactionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITransactionItem.h; sourceTree = "<group>"; };
-		F36240F216E0B78900A8AE38 /* libGoogleAnalytics_debug.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalytics_debug.a; sourceTree = "<group>"; };
-		F36240F316E0B78900A8AE38 /* libGoogleAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalytics.a; sourceTree = "<group>"; };
-		F36240F416E0B78900A8AE38 /* MNGoogleAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNGoogleAnalytics.h; sourceTree = "<group>"; };
-		F36240F516E0B78900A8AE38 /* MNGoogleAnalytics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNGoogleAnalytics.m; sourceTree = "<group>"; };
 		F36240F616E0B78A00A8AE38 /* MNSetFocusScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNSetFocusScreen.h; sourceTree = "<group>"; };
 		F36240F716E0B78A00A8AE38 /* MNSetFocusScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNSetFocusScreen.m; sourceTree = "<group>"; };
 		F36240F816E0B78A00A8AE38 /* MNSplashScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNSplashScreen.h; sourceTree = "<group>"; };
@@ -465,8 +453,6 @@
 				EC40546516D4617A001409E6 /* UIKit.framework in Frameworks */,
 				EC40546716D4617A001409E6 /* Foundation.framework in Frameworks */,
 				EC40546916D4617A001409E6 /* CoreGraphics.framework in Frameworks */,
-				F36240FC16E0B78A00A8AE38 /* libGoogleAnalytics_debug.a in Frameworks */,
-				F36240FD16E0B78A00A8AE38 /* libGoogleAnalytics.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -843,15 +829,6 @@
 				F3E3BFA416E83BDB0091FC99 /* TKPaginatorView.m */,
 				F3E3BFA516E83BDB0091FC99 /* TKPaginatorViewController.h */,
 				F3E3BFA616E83BDB0091FC99 /* TKPaginatorViewController.m */,
-				F36240ED16E0B78800A8AE38 /* GAI.h */,
-				F36240EE16E0B78900A8AE38 /* GAITrackedViewController.h */,
-				F36240EF16E0B78900A8AE38 /* GAITracker.h */,
-				F36240F016E0B78900A8AE38 /* GAITransaction.h */,
-				F36240F116E0B78900A8AE38 /* GAITransactionItem.h */,
-				F36240F216E0B78900A8AE38 /* libGoogleAnalytics_debug.a */,
-				F36240F316E0B78900A8AE38 /* libGoogleAnalytics.a */,
-				F36240F416E0B78900A8AE38 /* MNGoogleAnalytics.h */,
-				F36240F516E0B78900A8AE38 /* MNGoogleAnalytics.m */,
 				F36240F616E0B78A00A8AE38 /* MNSetFocusScreen.h */,
 				F36240F716E0B78A00A8AE38 /* MNSetFocusScreen.m */,
 				F36240F816E0B78A00A8AE38 /* MNSplashScreen.h */,
@@ -1098,7 +1075,6 @@
 				F36240E716E06B8B00A8AE38 /* MNScreenshot.m in Sources */,
 				F36240E816E06B8B00A8AE38 /* MNVibrate.m in Sources */,
 				F8935B581A65EB8E005BA1F4 /* GetAdvertisingWebService.m in Sources */,
-				F36240FE16E0B78A00A8AE38 /* MNGoogleAnalytics.m in Sources */,
 				F36240FF16E0B78A00A8AE38 /* MNSetFocusScreen.m in Sources */,
 				F362410016E0B78A00A8AE38 /* MNSplashScreen.m in Sources */,
 				F3E3BFA816E83BDB0091FC99 /* MNDownloadQueue.m in Sources */,
