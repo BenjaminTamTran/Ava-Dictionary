@@ -150,21 +150,13 @@
 		F3E3BFD416E83FA50091FC99 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3E3BFD316E83FA50091FC99 /* MobileCoreServices.framework */; };
 		F3E3BFD616E840CA0091FC99 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F3E3BFD516E840CA0091FC99 /* libz.dylib */; };
 		F3FE93C9171FDB0C00954086 /* SQL.db in Resources */ = {isa = PBXBuildFile; fileRef = F3FE93C8171FDB0C00954086 /* SQL.db */; };
-		F3FE93CB171FED7800954086 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = F3FE93CA171FED7800954086 /* Default.png */; };
-		F3FE93CD171FED7D00954086 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F3FE93CC171FED7D00954086 /* Default@2x.png */; };
-		F3FE93CF1720011D00954086 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F3FE93CE1720011D00954086 /* Default-568h@2x.png */; };
 		F8739A041810E2780068689F /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8739A031810E2780068689F /* CoreTelephony.framework */; };
+		F8741AEA1A690F1F00D96DDA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8741AE91A690F1F00D96DDA /* Images.xcassets */; };
 		F8935B561A65EB8E005BA1F4 /* AdvertisingView.m in Sources */ = {isa = PBXBuildFile; fileRef = F8935B4D1A65EB8E005BA1F4 /* AdvertisingView.m */; };
 		F8935B571A65EB8E005BA1F4 /* AdvertisingViewiPad.m in Sources */ = {isa = PBXBuildFile; fileRef = F8935B4F1A65EB8E005BA1F4 /* AdvertisingViewiPad.m */; };
 		F8935B581A65EB8E005BA1F4 /* GetAdvertisingWebService.m in Sources */ = {isa = PBXBuildFile; fileRef = F8935B511A65EB8E005BA1F4 /* GetAdvertisingWebService.m */; };
 		F8935B591A65EB8E005BA1F4 /* NSDictionary+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = F8935B531A65EB8E005BA1F4 /* NSDictionary+Extension.m */; };
 		F8935B5A1A65EB8E005BA1F4 /* WebServiceHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = F8935B551A65EB8E005BA1F4 /* WebServiceHandler.m */; };
-		F8B900E617C49F5100076F61 /* ava 57.png in Resources */ = {isa = PBXBuildFile; fileRef = F8B900E517C49F5100076F61 /* ava 57.png */; };
-		F8B900E817C49F5700076F61 /* ava 114.png in Resources */ = {isa = PBXBuildFile; fileRef = F8B900E717C49F5700076F61 /* ava 114.png */; };
-		F8D20B3617EBEAB90030F7E9 /* 29.png in Resources */ = {isa = PBXBuildFile; fileRef = F8D20B3217EBEAB90030F7E9 /* 29.png */; };
-		F8D20B3717EBEAB90030F7E9 /* 58.png in Resources */ = {isa = PBXBuildFile; fileRef = F8D20B3317EBEAB90030F7E9 /* 58.png */; };
-		F8D20B3817EBEAB90030F7E9 /* 80.png in Resources */ = {isa = PBXBuildFile; fileRef = F8D20B3417EBEAB90030F7E9 /* 80.png */; };
-		F8D20B3917EBEAB90030F7E9 /* 120.png in Resources */ = {isa = PBXBuildFile; fileRef = F8D20B3517EBEAB90030F7E9 /* 120.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -436,11 +428,9 @@
 		F3E3BFD316E83FA50091FC99 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		F3E3BFD516E840CA0091FC99 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		F3FE93C8171FDB0C00954086 /* SQL.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = SQL.db; sourceTree = "<group>"; };
-		F3FE93CA171FED7800954086 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		F3FE93CC171FED7D00954086 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		F3FE93CE1720011D00954086 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		F8739A011810E2490068689F /* NewRelicAgent.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NewRelicAgent.framework; sourceTree = "<group>"; };
 		F8739A031810E2780068689F /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		F8741AE91A690F1F00D96DDA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "../AVA Dict/Images.xcassets"; sourceTree = "<group>"; };
 		F8935B4C1A65EB8E005BA1F4 /* AdvertisingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AdvertisingView.h; path = "Mana Framework/Advertising/AdvertisingView.h"; sourceTree = SOURCE_ROOT; };
 		F8935B4D1A65EB8E005BA1F4 /* AdvertisingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AdvertisingView.m; path = "Mana Framework/Advertising/AdvertisingView.m"; sourceTree = SOURCE_ROOT; };
 		F8935B4E1A65EB8E005BA1F4 /* AdvertisingViewiPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AdvertisingViewiPad.h; path = "Mana Framework/Advertising/AdvertisingViewiPad.h"; sourceTree = SOURCE_ROOT; };
@@ -451,12 +441,6 @@
 		F8935B531A65EB8E005BA1F4 /* NSDictionary+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+Extension.m"; path = "Mana Framework/Advertising/NSDictionary+Extension.m"; sourceTree = SOURCE_ROOT; };
 		F8935B541A65EB8E005BA1F4 /* WebServiceHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebServiceHandler.h; path = "Mana Framework/Advertising/WebServiceHandler.h"; sourceTree = SOURCE_ROOT; };
 		F8935B551A65EB8E005BA1F4 /* WebServiceHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebServiceHandler.m; path = "Mana Framework/Advertising/WebServiceHandler.m"; sourceTree = SOURCE_ROOT; };
-		F8B900E517C49F5100076F61 /* ava 57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ava 57.png"; sourceTree = "<group>"; };
-		F8B900E717C49F5700076F61 /* ava 114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ava 114.png"; sourceTree = "<group>"; };
-		F8D20B3217EBEAB90030F7E9 /* 29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 29.png; sourceTree = "<group>"; };
-		F8D20B3317EBEAB90030F7E9 /* 58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 58.png; sourceTree = "<group>"; };
-		F8D20B3417EBEAB90030F7E9 /* 80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 80.png; sourceTree = "<group>"; };
-		F8D20B3517EBEAB90030F7E9 /* 120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 120.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -543,15 +527,6 @@
 		EC40545816D46179001409E6 = {
 			isa = PBXGroup;
 			children = (
-				F8D20B3217EBEAB90030F7E9 /* 29.png */,
-				F8D20B3317EBEAB90030F7E9 /* 58.png */,
-				F8D20B3417EBEAB90030F7E9 /* 80.png */,
-				F8D20B3517EBEAB90030F7E9 /* 120.png */,
-				F8B900E717C49F5700076F61 /* ava 114.png */,
-				F8B900E517C49F5100076F61 /* ava 57.png */,
-				F3FE93CE1720011D00954086 /* Default-568h@2x.png */,
-				F3FE93CC171FED7D00954086 /* Default@2x.png */,
-				F3FE93CA171FED7800954086 /* Default.png */,
 				EC40546A16D4617A001409E6 /* Mana Framework */,
 				EC40546316D4617A001409E6 /* Frameworks */,
 				EC40546216D4617A001409E6 /* Products */,
@@ -617,6 +592,7 @@
 			children = (
 				EC40546C16D4617A001409E6 /* AVA Dict-Info.plist */,
 				EC40546D16D4617A001409E6 /* InfoPlist.strings */,
+				F8741AE91A690F1F00D96DDA /* Images.xcassets */,
 				EC40547016D4617A001409E6 /* main.m */,
 				EC40547216D4617A001409E6 /* AVA Dict-Prefix.pch */,
 				EC40547616D4617A001409E6 /* Default.png */,
@@ -1030,9 +1006,7 @@
 				EC1DE8AA16D70E88006EF693 /* MNViewController.xib in Resources */,
 				EC2A6A3116D86BA0002DD058 /* WebViewJavascriptBridge.js.txt in Resources */,
 				EC2A6A4A16D87829002DD058 /* MNCenterViewController.xib in Resources */,
-				F8D20B3617EBEAB90030F7E9 /* 29.png in Resources */,
 				EC2A6A4C16D87829002DD058 /* MNLeftViewController.xib in Resources */,
-				F8D20B3817EBEAB90030F7E9 /* 80.png in Resources */,
 				EC2A6A4E16D87829002DD058 /* MNRightViewController.xib in Resources */,
 				EC2A6A5016D87833002DD058 /* navigation_bg.png in Resources */,
 				F362410116E0B78A00A8AE38 /* MNSplashScreen.xib in Resources */,
@@ -1042,14 +1016,8 @@
 				F310C29416FAC4E2007B93CF /* Dictionary.html in Resources */,
 				F3E28B5017014C4100183116 /* Dictionary-Left.html in Resources */,
 				F3E28B5117014C4100183116 /* Dictionary-Right.html in Resources */,
+				F8741AEA1A690F1F00D96DDA /* Images.xcassets in Resources */,
 				F3FE93C9171FDB0C00954086 /* SQL.db in Resources */,
-				F8D20B3717EBEAB90030F7E9 /* 58.png in Resources */,
-				F3FE93CB171FED7800954086 /* Default.png in Resources */,
-				F3FE93CD171FED7D00954086 /* Default@2x.png in Resources */,
-				F3FE93CF1720011D00954086 /* Default-568h@2x.png in Resources */,
-				F8D20B3917EBEAB90030F7E9 /* 120.png in Resources */,
-				F8B900E617C49F5100076F61 /* ava 57.png in Resources */,
-				F8B900E817C49F5700076F61 /* ava 114.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1290,6 +1258,8 @@
 		EC40548516D4617A001409E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Tam Tam (6THHEXRJ3A)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Tam Tam (6THHEXRJ3A)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1299,7 +1269,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mana Framework/AVA Dict-Prefix.pch";
 				INFOPLIST_FILE = "Mana Framework/AVA Dict-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Mana Framework\"",
@@ -1314,6 +1284,8 @@
 		EC40548616D4617A001409E6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Tam Tam (6THHEXRJ3A)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Tam Tam (6THHEXRJ3A)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1323,7 +1295,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mana Framework/AVA Dict-Prefix.pch";
 				INFOPLIST_FILE = "Mana Framework/AVA Dict-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Mana Framework\"",
