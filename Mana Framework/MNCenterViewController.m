@@ -155,19 +155,19 @@ NSString *home_url = @"http://127.0.0.1:8080/cache/http://a.p.mana.vn/main2/feat
                 allowCounted += 1;
             }
             [[NSUserDefaults standardUserDefaults] setInteger:allowCounted forKey:@"allowCounted2"];
-            NSLog(@" ********* allowCounted %d ***********",allowCounted);
-            if (allowCounted == 8) {
-                UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Review ứng dụng!"
-                                                                message:@"Hãy review 5 sao cho ứng dụng để giúp ứng dụng trở nên phổ biến hơn. Cảm ơn bạn!"
-                                                               delegate:self
-                                                      cancelButtonTitle:@"Đồng ý"
-                                                      otherButtonTitles:@"No, thanks!",nil];
-                alert.tag = 102;
-                [alert show];
-            }
-            if (allowCounted%6 == 0) {
-                [self showAdvertising];
-            }
+//            NSLog(@" ********* allowCounted %d ***********",allowCounted);
+//            if (allowCounted == 8) {
+//                UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Review ứng dụng!"
+//                                                                message:@"Hãy review 5 sao cho ứng dụng để giúp ứng dụng trở nên phổ biến hơn. Cảm ơn bạn!"
+//                                                               delegate:self
+//                                                      cancelButtonTitle:@"Đồng ý"
+//                                                      otherButtonTitles:@"No, thanks!",nil];
+//                alert.tag = 102;
+//                [alert show];
+//            }
+//            if (allowCounted%6 == 0) {
+//                [self showAdvertising];
+//            }
             responseCallback([database findKeyWordForManaDict:dicJson]);
             BOOL showTranslateIntro = [[NSUserDefaults standardUserDefaults] boolForKey:@"showTranslateIntro"];
             if (!showTranslateIntro) {
@@ -310,53 +310,53 @@ NSString *home_url = @"http://127.0.0.1:8080/cache/http://a.p.mana.vn/main2/feat
 
 #pragma mark showAdvertising
 - (void)showAdvertising{
-    NSString *url = @"http://benjaminsoft.byethost14.com/web_service/Advertising/advertising.php?appname=Ava";
-    [GetAdvertisingWebService getDataFromWebService:url withHandle:^(NSString* code, NSDictionary *data, NSError *error){
-        dispatch_async(dispatch_queue_create("com.benjaminsoft.bgqueue", NULL), ^(void) {
-            NSString *title = [data objectNotNullForKey:@"appname"];
-            self.appNameToAdvertising = title;
-            self.appNameToAdvertising = [self.appNameToAdvertising stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
-            NSString *desc = [data objectNotNullForKey:@"appdesc"];
-            
-            NSURL *url1 = [NSURL URLWithString:[data objectNotNullForKey:@"url1"]];
-            NSData *data1 = [NSData dataWithContentsOfURL:url1];
-            UIImage *img1 = [[UIImage alloc] initWithData:data1];
-            
-            NSURL *url2 = [NSURL URLWithString:[data objectNotNullForKey:@"url2"]];
-            NSData *data2 = [NSData dataWithContentsOfURL:url2];
-            UIImage *img2 = [[UIImage alloc] initWithData:data2];
-            
-            NSURL *url3 = [NSURL URLWithString:[data objectNotNullForKey:@"url3"]];
-            NSData *data3 = [NSData dataWithContentsOfURL:url3];
-            UIImage *img3 = [[UIImage alloc] initWithData:data3];
-            if (img1 && img2 && img3) {
-                NSArray *imageList = [NSArray arrayWithObjects: img1, img2, img3, nil];
-                dispatch_async(dispatch_get_main_queue(), ^(void) {
-                    AdvertisingView *lplv = [[AdvertisingView alloc] initWithTitle:title options:imageList andDescription:desc handler:^(NSInteger anIndex) {
-                        
-                    }];
-                    lplv.appstore = [data objectNotNullForKey:@"appstore"];
-                    lplv.delegate = self;
-                    [lplv showInView:self.view.window animated:YES];
-                });
-            }
-            return;
-        });
-        
-    }];
+//    NSString *url = @"http://benjaminsoft.byethost14.com/web_service/Advertising/advertising.php?appname=Ava";
+//    [GetAdvertisingWebService getDataFromWebService:url withHandle:^(NSString* code, NSDictionary *data, NSError *error){
+//        dispatch_async(dispatch_queue_create("com.benjaminsoft.bgqueue", NULL), ^(void) {
+//            NSString *title = [data objectNotNullForKey:@"appname"];
+//            self.appNameToAdvertising = title;
+//            self.appNameToAdvertising = [self.appNameToAdvertising stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+//            NSString *desc = [data objectNotNullForKey:@"appdesc"];
+//            
+//            NSURL *url1 = [NSURL URLWithString:[data objectNotNullForKey:@"url1"]];
+//            NSData *data1 = [NSData dataWithContentsOfURL:url1];
+//            UIImage *img1 = [[UIImage alloc] initWithData:data1];
+//            
+//            NSURL *url2 = [NSURL URLWithString:[data objectNotNullForKey:@"url2"]];
+//            NSData *data2 = [NSData dataWithContentsOfURL:url2];
+//            UIImage *img2 = [[UIImage alloc] initWithData:data2];
+//            
+//            NSURL *url3 = [NSURL URLWithString:[data objectNotNullForKey:@"url3"]];
+//            NSData *data3 = [NSData dataWithContentsOfURL:url3];
+//            UIImage *img3 = [[UIImage alloc] initWithData:data3];
+//            if (img1 && img2 && img3) {
+//                NSArray *imageList = [NSArray arrayWithObjects: img1, img2, img3, nil];
+//                dispatch_async(dispatch_get_main_queue(), ^(void) {
+//                    AdvertisingView *lplv = [[AdvertisingView alloc] initWithTitle:title options:imageList andDescription:desc handler:^(NSInteger anIndex) {
+//                        
+//                    }];
+//                    lplv.appstore = [data objectNotNullForKey:@"appstore"];
+//                    lplv.delegate = self;
+//                    [lplv showInView:self.view.window animated:YES];
+//                });
+//            }
+//            return;
+//        });
+//        
+//    }];
     
 }
 
 - (void)agreeToTryApp:(NSString*)url{
-    NSString *urlTryApp = @"http://benjaminsoft.byethost14.com/web_service/Advertising/tryapp.php";
-    NSLocale *currentLocale = [NSLocale currentLocale];  // get the current locale.
-    NSString *countryCode = [currentLocale objectForKey:NSLocaleCountryCode];
-    NSString *urlRequest = [[NSString alloc] initWithFormat:@"%@?appname=Ava&usercountry=%@&appadvertising=%@",urlTryApp,countryCode,self.appNameToAdvertising];
-    NSLog(@"%@",urlRequest);
-    [GetAdvertisingWebService getDataFromWebService:urlRequest withHandle:^(NSString* code, NSDictionary *data, NSError *error){
-        NSLog(@"dont care return value");
-        [[UIApplication sharedApplication] openURL: [NSURL URLWithString: url]];
-    }];
+//    NSString *urlTryApp = @"http://benjaminsoft.byethost14.com/web_service/Advertising/tryapp.php";
+//    NSLocale *currentLocale = [NSLocale currentLocale];  // get the current locale.
+//    NSString *countryCode = [currentLocale objectForKey:NSLocaleCountryCode];
+//    NSString *urlRequest = [[NSString alloc] initWithFormat:@"%@?appname=Ava&usercountry=%@&appadvertising=%@",urlTryApp,countryCode,self.appNameToAdvertising];
+//    NSLog(@"%@",urlRequest);
+//    [GetAdvertisingWebService getDataFromWebService:urlRequest withHandle:^(NSString* code, NSDictionary *data, NSError *error){
+//        NSLog(@"dont care return value");
+//        [[UIApplication sharedApplication] openURL: [NSURL URLWithString: url]];
+//    }];
 }
 - (void)noAgreeToTryApp:(int)type{
     

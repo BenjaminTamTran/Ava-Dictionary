@@ -1368,7 +1368,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mana Framework/AVA Dict-Prefix.pch";
 				INFOPLIST_FILE = "Mana Framework/AVA Dict-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Mana Framework\"",
@@ -1377,8 +1377,8 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "AVA Dict";
-				PROVISIONING_PROFILE = "FDE77B35-5B3F-4638-AEC4-D48B9F71539E";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "FDE77B35-5B3F-4638-AEC4-D48B9F71539E";
+				PROVISIONING_PROFILE = "218ef367-28b9-4e04-a71d-65b78b3dd0ad";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "218ef367-28b9-4e04-a71d-65b78b3dd0ad";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1397,7 +1397,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mana Framework/AVA Dict-Prefix.pch";
 				INFOPLIST_FILE = "Mana Framework/AVA Dict-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Mana Framework\"",
@@ -1406,8 +1406,8 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "AVA Dict";
-				PROVISIONING_PROFILE = "FDE77B35-5B3F-4638-AEC4-D48B9F71539E";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "FDE77B35-5B3F-4638-AEC4-D48B9F71539E";
+				PROVISIONING_PROFILE = "218ef367-28b9-4e04-a71d-65b78b3dd0ad";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "218ef367-28b9-4e04-a71d-65b78b3dd0ad";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
