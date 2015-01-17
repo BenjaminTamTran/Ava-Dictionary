@@ -17,6 +17,8 @@
 #import "AdvertisingView.h"
 #import "GetAdvertisingWebService.h"
 #import "NSDictionary+Extension.h"
+#import "GADBannerView.h"
+#import "GADRequest.h"
 NSString *home_url = @"http://127.0.0.1:8080/cache/http://a.p.mana.vn/main2/feature_v2";
 
 @interface MNCenterViewController ()<AdvertisingViewDelegate>{
@@ -45,6 +47,14 @@ NSString *home_url = @"http://127.0.0.1:8080/cache/http://a.p.mana.vn/main2/feat
 {
     [super viewDidLoad];
     
+    self.bannerView.adUnitID = @"a152e14e8951ef3";
+    self.bannerView.rootViewController = self;
+    
+    GADRequest *request = [GADRequest request];
+    // Enable test ads on simulators.
+    request.testDevices = @[ GAD_SIMULATOR_ID ];
+    [self.bannerView loadRequest:request];
+
     self.sidePanelController.leftFixedWidth = self.view.bounds.size.width - 44;
     self.sidePanelController.rightFixedWidth = self.view.bounds.size.width - 30;
     
@@ -352,4 +362,7 @@ NSString *home_url = @"http://127.0.0.1:8080/cache/http://a.p.mana.vn/main2/feat
     
 }
 
+//- (void)dealloc {
+//    [super dealloc];
+//}
 @end

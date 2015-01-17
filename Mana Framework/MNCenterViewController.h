@@ -14,7 +14,7 @@
 #import "MNDatabaseManagement.h"
 #import "MNGetFocusScreen.h"
 #import <MessageUI/MessageUI.h> 
-
+@class GADBannerView;
 
 @interface MNCenterViewController : UIViewController <UIWebViewDelegate, MFMailComposeViewControllerDelegate, MFMessageComposeViewControllerDelegate>
 
@@ -25,6 +25,7 @@
 @property (nonatomic,retain) IBOutlet UIWebView *webView;
 @property (nonatomic,retain) IBOutlet UILabel *labelLoading;
 @property (nonatomic,retain) IBOutlet UIActivityIndicatorView *indicatorLoading;
+@property (weak, nonatomic) IBOutlet GADBannerView  *bannerView;
 @property (nonatomic)int menu_;
 @property (nonatomic,retain) NSString *Source_viet_anh;
 @property (nonatomic,retain) NSString *Source_anh_viet;

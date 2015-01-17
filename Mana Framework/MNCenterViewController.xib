@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MNCenterViewController">
             <connections>
+                <outlet property="bannerView" destination="SBX-e2-cJV" id="JpR-Az-r4V"/>
                 <outlet property="indicatorLoading" destination="ERN-KA-KWd" id="UFt-ap-kor"/>
                 <outlet property="labelLoading" destination="ibB-up-D9j" id="f87-Pg-6Xm"/>
                 <outlet property="loadingView" destination="DIv-qP-ohJ" id="dcb-RI-3fU"/>
@@ -44,6 +45,11 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="color" red="0.18431372939999999" green="0.58823531870000001" blue="0.58039218189999997" alpha="1" colorSpace="deviceRGB"/>
                 </activityIndicatorView>
+                <view contentMode="scaleToFill" id="SBX-e2-cJV" customClass="GADBannerView">
+                    <rect key="frame" x="0.0" y="430" width="320" height="50"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

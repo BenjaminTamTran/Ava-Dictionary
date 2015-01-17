@@ -31,6 +31,7 @@
 @property (nonatomic, strong, readonly) UIButton *removeRightPanel;
 @property (nonatomic, strong, readonly) UIButton *addRightPanel;
 @property (nonatomic, strong, readonly) UIButton *changeCenterPanel;
+
 @property (strong, nonatomic) WebViewJavascriptBridge *javascriptBridge;
 
 - (IBAction)onTapNavigationMain:(id)sender;
