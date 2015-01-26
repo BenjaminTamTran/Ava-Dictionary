@@ -82,6 +82,14 @@
     viewController.sidePanelController.rightGapPercentage = 100;
     self.window.rootViewController = viewController;
     [self.window makeKeyAndVisible];
+    
+//    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory , NSUserDomainMask, YES);
+//    NSString *documentsDir = [paths objectAtIndex:0];
+//    NSString* dbpath = [documentsDir stringByAppendingPathComponent:@"SQL.db"];
+//    NSURL *urlDB = [[NSURL alloc] initFileURLWithPath:dbpath];
+//    NSError *error;
+//    [urlDB setResourceValue:[NSNumber numberWithBool:YES] forKey:NSURLIsExcludedFromBackupKey error:&error];
+//    NSLog(error.description);
     return YES;
 }
 
