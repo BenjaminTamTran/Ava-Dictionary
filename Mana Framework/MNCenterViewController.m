@@ -189,16 +189,6 @@ NSString *home_url = @"http://127.0.0.1:8080/cache/http://a.p.mana.vn/main2/feat
     NSString *dictData = [documentRootPath stringByAppendingPathComponent:@"anh_viet.db"];
     NSString *zipFilePath = [documentRootPath stringByAppendingPathComponent:@"ava_dict_data.zip"];
     
-    // Exclude these from Backup
-    NSURL *urlDB = [[NSURL alloc] initFileURLWithPath:dictData];
-    NSError *error;
-    [urlDB setResourceValue:[NSNumber numberWithBool:YES] forKey:NSURLIsExcludedFromBackupKey error:&error];
-    NSLog(error.description);
-    
-    NSURL *urlZip = [[NSURL alloc] initFileURLWithPath:zipFilePath];
-    [urlZip setResourceValue:[NSNumber numberWithBool:YES] forKey:NSURLIsExcludedFromBackupKey error:&error];
-    NSLog(error.description);
-    
     NSFileManager *manager = [NSFileManager defaultManager];
     if (![manager fileExistsAtPath:dictData]) {
         [self.loadingView setHidden:NO];
@@ -217,6 +207,7 @@ NSString *home_url = @"http://127.0.0.1:8080/cache/http://a.p.mana.vn/main2/feat
                 [self.labelLoading setHidden:YES];
                 [self.indicatorLoading setHidden:YES];
                 [self.indicatorLoading stopAnimating];
+                [self excludeFromBackup];
             });
         });
     }else{
@@ -224,7 +215,25 @@ NSString *home_url = @"http://127.0.0.1:8080/cache/http://a.p.mana.vn/main2/feat
         [self.labelLoading setHidden:YES];
         [self.indicatorLoading setHidden:YES];
         [self.indicatorLoading stopAnimating];
+        [self excludeFromBackup];
     }
+}
+
+- (void) excludeFromBackup {
+    NSArray *documentPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentRootPath = [documentPaths objectAtIndex:0];
+    NSString *dictData = [documentRootPath stringByAppendingPathComponent:@"anh_viet.db"];
+    NSString *zipFilePath = [documentRootPath stringByAppendingPathComponent:@"ava_dict_data.zip"];
+    
+    // Exclude these from Backup
+    NSURL *urlDB = [[NSURL alloc] initFileURLWithPath:dictData];
+    NSError *error;
+    [urlDB setResourceValue:[NSNumber numberWithBool:YES] forKey:NSURLIsExcludedFromBackupKey error:&error];
+    NSLog(error.description);
+    
+    NSURL *urlZip = [[NSURL alloc] initFileURLWithPath:zipFilePath];
+    [urlZip setResourceValue:[NSNumber numberWithBool:YES] forKey:NSURLIsExcludedFromBackupKey error:&error];
+    NSLog(error.description);
 }
 
 #pragma mark - AlertView Delegate
