@@ -187,7 +187,8 @@ NSString *home_url = @"http://127.0.0.1:8080/cache/http://a.p.mana.vn/main2/feat
     NSArray *documentPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentRootPath = [documentPaths objectAtIndex:0];
     NSString *dictData = [documentRootPath stringByAppendingPathComponent:@"anh_viet.db"];
-    NSString *zipFilePath = [documentRootPath stringByAppendingPathComponent:@"ava_dict_data.zip"];
+//    NSString *zipFilePath = [documentRootPath stringByAppendingPathComponent:@"ava_dict_data.zip"];
+    NSString *zipFilePath = [[NSBundle mainBundle] pathForResource:@"dict" ofType:@"zip"];
     
     NSFileManager *manager = [NSFileManager defaultManager];
     if (![manager fileExistsAtPath:dictData]) {
@@ -196,11 +197,11 @@ NSString *home_url = @"http://127.0.0.1:8080/cache/http://a.p.mana.vn/main2/feat
         [self.indicatorLoading setHidden:NO];
         [self.indicatorLoading startAnimating];
         dispatch_async(dispatch_queue_create("com.benjaminsoft.bgqueue", NULL), ^(void) {
-            if (![manager fileExistsAtPath:zipFilePath]) {
-                NSURL *urlZipDropBox = [NSURL URLWithString:@"https://dl.dropboxusercontent.com/u/70353767/iOSapplist/dict.zip"];
-                NSData *dataZip = [NSData dataWithContentsOfURL:urlZipDropBox];
-                [dataZip writeToFile:zipFilePath atomically:YES];
-            }
+//            if (![manager fileExistsAtPath:zipFilePath]) {
+//                NSURL *urlZipDropBox = [NSURL URLWithString:@"https://dl.dropboxusercontent.com/u/70353767/iOSapplist/dict.zip"];
+//                NSData *dataZip = [NSData dataWithContentsOfURL:urlZipDropBox];
+//                [dataZip writeToFile:zipFilePath atomically:YES];
+//            }
             [SSZipArchive unzipFileAtPath:zipFilePath toDestination:documentRootPath];
             dispatch_async(dispatch_get_main_queue(), ^(void) {
                 [self.loadingView setHidden:YES];
@@ -223,7 +224,8 @@ NSString *home_url = @"http://127.0.0.1:8080/cache/http://a.p.mana.vn/main2/feat
     NSArray *documentPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentRootPath = [documentPaths objectAtIndex:0];
     NSString *dictData = [documentRootPath stringByAppendingPathComponent:@"anh_viet.db"];
-    NSString *zipFilePath = [documentRootPath stringByAppendingPathComponent:@"ava_dict_data.zip"];
+//    NSString *zipFilePath = [documentRootPath stringByAppendingPathComponent:@"ava_dict_data.zip"];
+    NSString *zipFilePath = [[NSBundle mainBundle] pathForResource:@"dict" ofType:@"zip"];
     
     // Exclude these from Backup
     NSURL *urlDB = [[NSURL alloc] initFileURLWithPath:dictData];

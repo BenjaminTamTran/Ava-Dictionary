@@ -154,6 +154,7 @@
 		F8935B581A65EB8E005BA1F4 /* GetAdvertisingWebService.m in Sources */ = {isa = PBXBuildFile; fileRef = F8935B511A65EB8E005BA1F4 /* GetAdvertisingWebService.m */; };
 		F8935B591A65EB8E005BA1F4 /* NSDictionary+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = F8935B531A65EB8E005BA1F4 /* NSDictionary+Extension.m */; };
 		F8935B5A1A65EB8E005BA1F4 /* WebServiceHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = F8935B551A65EB8E005BA1F4 /* WebServiceHandler.m */; };
+		F8A0BF9E1A8441D70003C94E /* dict.zip in Resources */ = {isa = PBXBuildFile; fileRef = F8A0BF9D1A8441D70003C94E /* dict.zip */; };
 		F8D996251A69E38600EFCAEB /* libGoogleAdMobAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F8D996231A69E38600EFCAEB /* libGoogleAdMobAds.a */; };
 		F8D996261A69E38600EFCAEB /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = F8D996241A69E38600EFCAEB /* README.txt */; };
 		F8D996281A69E89600EFCAEB /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8D996271A69E89600EFCAEB /* AdSupport.framework */; };
@@ -434,6 +435,7 @@
 		F8935B531A65EB8E005BA1F4 /* NSDictionary+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+Extension.m"; path = "Mana Framework/Advertising/NSDictionary+Extension.m"; sourceTree = SOURCE_ROOT; };
 		F8935B541A65EB8E005BA1F4 /* WebServiceHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebServiceHandler.h; path = "Mana Framework/Advertising/WebServiceHandler.h"; sourceTree = SOURCE_ROOT; };
 		F8935B551A65EB8E005BA1F4 /* WebServiceHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebServiceHandler.m; path = "Mana Framework/Advertising/WebServiceHandler.m"; sourceTree = SOURCE_ROOT; };
+		F8A0BF9D1A8441D70003C94E /* dict.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; name = dict.zip; path = "Mana Framework/DictionaryApp/dict.zip"; sourceTree = SOURCE_ROOT; };
 		F8D996061A69E38600EFCAEB /* DFPBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFPBannerView.h; sourceTree = "<group>"; };
 		F8D996071A69E38600EFCAEB /* DFPExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFPExtras.h; sourceTree = "<group>"; };
 		F8D996081A69E38600EFCAEB /* DFPInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFPInterstitial.h; sourceTree = "<group>"; };
@@ -944,6 +946,7 @@
 		F3FE93C7171FDB0C00954086 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F8A0BF9D1A8441D70003C94E /* dict.zip */,
 				F3FE93C8171FDB0C00954086 /* SQL.db */,
 			);
 			path = Resources;
@@ -1115,6 +1118,7 @@
 				F3E3BFAC16E83BDB0091FC99 /* MNViewDetailViewController.xib in Resources */,
 				F310C29416FAC4E2007B93CF /* Dictionary.html in Resources */,
 				F3E28B5017014C4100183116 /* Dictionary-Left.html in Resources */,
+				F8A0BF9E1A8441D70003C94E /* dict.zip in Resources */,
 				F3E28B5117014C4100183116 /* Dictionary-Right.html in Resources */,
 				F8741AEA1A690F1F00D96DDA /* Images.xcassets in Resources */,
 				F3FE93C9171FDB0C00954086 /* SQL.db in Resources */,
